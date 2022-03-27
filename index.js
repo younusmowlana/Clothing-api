@@ -1,11 +1,12 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
-mongoose.connect(
-    "mongodb+srv://sharp:user1234@cluster0.qt57n.mongodb.net/shop?retryWrites=true&w=majority"
-    
-    ).then(()=>console.log("DB Connection Success"))
+dotenv.config();
+
+mongoose.connect(process.env.MONGO_URL)
+    .then(()=>console.log("DB Connection Success!"))
     .catch((err)=>{
         console.log(err);
     }
