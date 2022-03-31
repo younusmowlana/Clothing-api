@@ -20,9 +20,13 @@ router.post("/register", async (req,res)=>{
     }catch(err){
     res.status(500).json(err);
 }
-
-
 });
+
+// //Login
+// router.post("/login", (req,res) => {
+
+
+// });
 
 
 module.exports = router
