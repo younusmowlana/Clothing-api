@@ -46,7 +46,7 @@ if (OriginalPassword !==req.body.password) {
             isAdmin:user.isAdmin,
         },
         process.env.JWT_SEC,
-        {expiresIn:"3d"}
+        {expiresIn:"3d"} // after 3 days we should login again
         
         );
         const { password, ...others } = user._doc;  
