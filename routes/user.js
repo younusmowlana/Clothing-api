@@ -26,4 +26,12 @@ router.put("/:id" ,verifyTokenAndAuthorization, async (req,res)=>{
     }
 });
 
+
+//Delete
+router.delete("/:id",verifyTokenAndAuthorization, async (req,res)=>{
+
+
+    
+});
+
 module.exports = router
