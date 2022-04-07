@@ -1,5 +1,5 @@
 const User = require("../models/User");
-const { verifyToken, verifyTokenAndAuthorization } = require("./verifyToken");
+const { verifyToken, verifyTokenAndAuthorization, verifyTokenAndAdmin } = require("./verifyToken");
 
 const router = require("express").Router();
 
@@ -37,4 +37,9 @@ try{
 }
 });
 
+
+//Get(read)
+router.get("/id:",verifyTokenAndAdmin,async (req,res)=>{ //only admin get any user
+
+});
 module.exports = router
