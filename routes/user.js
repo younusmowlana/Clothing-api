@@ -50,7 +50,9 @@ router.get("/find/:id",verifyTokenAndAdmin,async (req,res)=>{ //only admin get a
     }
 });
 
- //Get all users(read)
+ 
+
+//Get all users(read)
 router.get("/",verifyTokenAndAdmin,async (req,res)=>{ //only admin get any user by id
   try{
       const users = await User.find();
@@ -59,7 +61,5 @@ router.get("/",verifyTokenAndAdmin,async (req,res)=>{ //only admin get any user 
       return res.status(500).json(err);
   }
 });
-
-
 
 module.exports = router
