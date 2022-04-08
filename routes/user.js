@@ -65,4 +65,9 @@ router.get("/",verifyTokenAndAdmin,async (req,res)=>{ //only admin get any user 
   }
 });
 
+//Get user stats
+
+router.get("/stats",verifyTokenAndAdmin, async (req,res)=>{ //this function returns total number of users per month
+
+});
 module.exports = router
