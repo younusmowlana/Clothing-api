@@ -54,11 +54,14 @@ router.get("/find/:id",verifyTokenAndAdmin,async (req,res)=>{ //only admin get a
 
 //Get all users(read)
 router.get("/",verifyTokenAndAdmin,async (req,res)=>{ //only admin get any user by id
-  try{
-      const users = await User.find();
-      res.status(200).json(users);
-  }catch(err){
-      return res.status(500).json(err);
+  const query = req.query.new;
+  try {
+    const users = query
+      ? await User.find().sort({ _id: -1 }).limit(5)
+      : await User.find();
+    res.status(200).json(users);
+  } catch (err) {
+    res.status(500).json(err);
   }
 });
 
