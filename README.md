@@ -1,3 +1,3 @@
 # Clothing-api
  
-CRUD function implementation. 
+CRUD functions implementation. 
