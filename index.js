@@ -12,11 +12,11 @@ app.use(cors())
 
 dotenv.config();
 
-// mongoose.connect(process.env.MONGO_URL)
-//     .then(()=>console.log("DB Connection is successfull!"))
-//     .catch((err)=>{
-//         console.log(err);
-//     });
+mongoose.connect(process.env.MONGO_URL)
+    .then(()=>console.log("DB Connection is successfull!"))
+    .catch((err)=>{
+        console.log(err);
+    });
 
 app.use(express.json());
 app.use("/api/user", userRoute);    
