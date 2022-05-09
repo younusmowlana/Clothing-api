@@ -1,6 +1,5 @@
 const router = require("express").Router();
 require ("dotenv").config();
-
 //const KEY = 'sk_test_51KnJzyDDhDxx13zXLdk7cu748T7B69sKBvNc5KO9ZRFsKoqjXXeh2nfUnqv7kluP4gPFAbi5Q9EQwtGreyZa1uAS005nk0DFsJ'
 const stripe = require("stripe")(process.env.STRIPE_KEY);
 
