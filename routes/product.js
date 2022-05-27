@@ -23,6 +23,7 @@ router.post("/", verifyTokenAndAdmin, async (req, res) => { //only admin can cre
 //UPDATE
 router.put("/:id", verifyTokenAndAdmin, async (req, res) => {
   try {
+    console.table(req.body)
     const updatedProduct = await Product.findByIdAndUpdate(
       req.params.id,
       {
